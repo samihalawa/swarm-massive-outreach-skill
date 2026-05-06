@@ -1,0 +1,7 @@
+name: swarm-massive-outreach-skill
+description: |
+  Autonomous compliant outreach skill that checks environment configuration, discovers public targets, deduplicates against mailbox and Notion, sends personalized SMTP emails, and logs every action to Notion.
+version: 1.0.0
+license: MIT
+author: samihalawa
+homepage: https://github.com/samihalawa/swarm-massive-outreach-skill
