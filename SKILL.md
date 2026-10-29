@@ -1,6 +1,6 @@
 ---
 name: swarm-massive-outreach-skill
-description: Use when the user wants an autonomous but compliant cold-outreach agent that discovers targets, deduplicates against mailbox and Notion history, writes personalized short emails, sends through SMTP, and logs every action to Notion. The skill requires runtime configuration through environment variables or direct user answers before any send.
+description: Use when the user wants an autonomous but compliant cold-outreach agent that discovers targets, deduplicates against mailbox and Notion history, writes personalized short emails, sends through SMTP, and logs every action to Notion. Resolve current campaign configuration and account access before sends, and distinguish reply metrics from qualified opportunities.
 metadata:
   author: samihalawa
   version: "1.0.0"
@@ -9,13 +9,25 @@ metadata:
 
 # Swarm Massive Outreach Skill
 
+## Reply History And Opportunity Evidence
+
+For an inbox audit, pending-action review, or profit ranking, use `$inbox-forensic-action-operator-skill`; keep this skill responsible for its own campaign work. Reconstruct the full relevant inbound, Sent, Drafts, attachment and later provider history before deciding who owes action. A draft, old unanswered message, tracker label or positive reply alone does not prove a current obligation, send, selection or win. Verify the newest native state immediately before an authorized action and read back afterward; preserve existing sends and submissions.
+
+For all/every reviews, exhaust the bounded message-ID population, hydrate full bodies in provider-sized batches, reconcile thread-only IDs and aliases, and record the exact accounts, timezone bounds, cutoff, deduplicated counts and unavailable slices. Do not substitute a giant truncated dump, capped thread or relevance-filtered sample for complete coverage. Use native mailbox connectors or SMTP/IMAP before browser access.
+
+Keep early interest and campaign response metrics separate from qualified earning opportunities. Employment qualifies only at final selection, offer or contracting; other commercial work needs explicit progress beyond the first approach, such as a passed review, active negotiation, accepted terms, committed customer or paid transaction. Separate public tenders/applications from other commerce; verify public case status, documents and deadlines on the official platform. Generic alerts and advertised rates are not pipeline value.
+
+Rank qualified work by realistic cash profit, proximity to closing/payment, urgency and preventable loss. For this owner's operating model, own labour and technical delivery are zero cash cost; include separately staffed roles only when binding requirements force them, plus actual acquisition, supplier, fee, shipping, required travel and other external costs. Recover existing costs/agreements from history before calling them unknown. Optional outsourcing is a scenario, not an automatic deduction. Distinguish revenue, fixed/contingent amounts, held/available funds, profit, shared fees and noncash credits; invent no win probabilities.
+
+Use the current authorized tracker and scope rather than creating duplicate logs or broadening outreach during an inbox review. A one-off follow-up does not authorize a recurring automation; do not create or restart scheduled agent loops without an explicit request.
+
 ## Purpose
 
 Run a high-volume outreach wave without placeholders, guessed credentials, or silent assumptions.
 
 The agent must:
 
-- collect missing campaign facts and credentials before acting;
+- recover relevant campaign facts and exact-account credentials before the affected action;
 - discover qualified targets from public sources;
 - deduplicate against mailbox history and Notion before each contact;
 - write one specific message per recipient;
@@ -24,7 +36,7 @@ The agent must:
 
 ## Hard Start Gate
 
-Before discovery, drafting, sending, or Notion writes, resolve every required value below from the runtime environment. If any required value is absent or empty, ask the user for the missing values in one concise message and stop until they answer.
+Resolve the current campaign values below from the authorized task, existing tracker, runtime environment and saved exact-account configuration. Reuse existing global environment values, including `~/.env` when available; retrieve credentials through the runtime-supported vault route. Do not invent missing facts or secrets. An unavailable send dependency blocks that send, not independent discovery or read-only reply analysis. Do not request the same authority or context already supplied by the owner.
 
 Required environment variables:
 
