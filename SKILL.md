@@ -21,6 +21,12 @@ Rank qualified work by realistic cash profit, proximity to closing/payment, urge
 
 Use the current authorized tracker and scope rather than creating duplicate logs or broadening outreach during an inbox review. A one-off follow-up does not authorize a recurring automation; do not create or restart scheduled agent loops without an explicit request.
 
+## Volume economics (owner, 12 November 2026)
+
+Targets are unlimited; time and tokens are not. Include every discovered target that matches `OUTREACH_TARGET_DESCRIPTION` and has a public contact route. No fit scoring, ranking or exclusion write-ups. The only filters are the checkable ones in this skill: the duplicate gate, the do-not-send list and the provider's rate limit.
+
+Run in passes, not per-recipient loops: one discovery pass that captures source and hook, one pass that writes every personalised draft, one validation pass, then the sends at the configured rate, logging to Notion in batches where its API allows. Reuse the source evidence captured at discovery within the same wave. Verify outcomes in bulk afterwards (bounces, replies) instead of re-verifying each input before each send. The goal is replies that become meetings: a missing dependency stops only the step that needs it.
+
 ## Purpose
 
 Run a high-volume outreach wave without placeholders, guessed credentials, or silent assumptions.
@@ -71,7 +77,6 @@ Optional environment variables:
 
 Credential rules:
 
-- Never print secrets.
 - Never write secrets to Notion, local logs, reports, email body, subject, or final output.
 - Never invent credentials or use guessed defaults for secrets.
 - Use STARTTLS for SMTP when supported by the configured port.
